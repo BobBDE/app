@@ -1,0 +1,18 @@
+<div>
+    <button ng-click="goToParametres()">Paramètres</button>
+</div>
+<div>
+    <div ng-repeat="message in accueil.messages">
+        <h3>{{message.titre}}</h3>
+        <p>{{message.message}}</p>
+        {{message.date |  date:'dd-MM-yyyy HH:mm'}}
+    </div> 
+    
+    <div ng-controller="EventsCtrl as eventsCtrl">
+        <div ng-repeat="event in eventsCtrl.events">
+        <h3>{{event.name}}</h3>
+        <p>{{event.description}}</p>
+        {{event.date |  date:'dd-MM-yyyy HH:mm'}}
+    </div> 
+    </div>
+</div>

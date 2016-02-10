@@ -1,0 +1,96 @@
+<div ng-show="error">
+    <p>{{error}}</p>
+</div>  
+
+<div class="list">
+        <form ng-submit="login(user)">
+          <label class="item item-input item-stacked-label firstCase">
+            <input type ="text" placeholder="Pseudo" ng-model="user.pseudo">
+            <span class ="infoList"  ng-show="lblPseudo"> Veuillez entrer un pseudo valide !</span> 
+          </label>
+          <label class="item item-input input-block item-stacked-label firstCase">
+            <input type ="password" placeholder="Password" ng-model="user.mdp">
+            <span class ="infoList"  ng-show="lblMdp"> Veuillez entrer un mot de passe valide !</span>
+          </label>
+          <label class="item item-button firstCase">
+            <button class="button button-block button-positive" type="submit">
+          Sign-In
+        </button>
+          </label>
+        </form>
+    <button ng-click="goToResetPassword()">Mot de passe oublié?</button>
+      </div>
+
+<div>
+    <button ng-show="!newUser" ng-click="newUser=true">Inscription</button>
+     <form class="form" 
+          name="form"
+          ng-submit="signup(this)"
+          novalidate
+          ng-model-options="{updateOn: 'default blur', debounce: {'default': 200, 'blur': 0}}"
+          ng-show="newUser">
+        <fieldset>            
+              <div class="form-group">
+                <input type="username"
+                       class="form-control"
+                       name="email"
+                       placeholder="Adresse E-mail"
+                       ng-model="email"
+                       required>
+                <div class="text-danger" ng-show="form.email.$error.email">This is not a valid email.</div>
+            </div>
+            <div class="form-group">
+                <input type="password"
+                       class="form-control"
+                       name="password"
+                       placeholder="Mot de passe"
+                       ng-model="password"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <input type="text"
+                       class="form-control"
+                       name="firstName  "
+                       placeholder="Prenom"
+                       ng-model="firstName"
+                       required>
+            </div>
+            <div class="form-group">
+                <input type="text"
+                       class="form-control"
+                       name="lastName"
+                       placeholder="Nom"
+                       ng-model="lastName"
+                       required>
+            </div>
+            <div class="form-group">
+                Filière : 
+                <label for="CGP">  CGP</label>
+                <input type="radio" name="filiere" id="CGP" value="CGP" ng-model="filiere">
+                <label for="ETI">  ETI</label>
+                <input type="radio" name="filiere" id="ETI" value="ETI" ng-model="filiere">
+                <label for="IRC">  IRC</label>
+                <input type="radio" name="filiere" id="IRC" value="IRC" ng-model="filiere">
+            </div>
+            <div class="form-group">
+                Année :
+                <label for="3">3</label>
+                <input type="radio" name="annee" id="3" value="3" ng-model="annee">
+                <label for="4">4</label>
+                <input type="radio" name="annee" id="4" value="4" ng-model="annee">
+                <label for="5">5</label>
+                <input type="radio" name="annee" id="5" value="5" ng-model="annee">
+                <label for="0">Plus</label>
+                <input type="radio" name="annee" id="0" value="0" ng-model="annee">
+            </div>
+            <div ng-if="newUser" class="form-group">
+                <button type="submit"
+                        class="btn btn-primary pull-right">
+                    Inscription
+                </button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+

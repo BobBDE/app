@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!-- <link href="lib/ionic/css/ionic.css" rel="stylesheet"> -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+   <script src="lib/angularbknd-sdk/dist/angular.min.js"></script> 
+    <script src="lib/angularbknd-sdk/dist/backand.min.js"></script>
+    <!--<script src="//cdn.backand.net/backand/dist/1.8.0/backand.min.js"></script>-->
+     <script src="lib/angularbknd-sdk/dist/angular-ui-router.min.js"></script> 
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- // <script src="cordova.js"></script> -->
+
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+
+    <!-- Service-->
+    
+    <script src="services/servicelogin.js"></script>
+    <script src="services/servicecommande.js"></script>
+    <script src="services/serviceMenu.js"></script>
+    <script src="services/serviceBoissons.js"></script>
+    <script src="services/servicePlats.js"></script>
+    <script src="services/serviceAccueil.js"></script>
+    <!-- // <script src="pages/desserts/serviceDessert.js"></script> -->
+
+
+    <script src="controleurs/controllers.js"></script>
+    <script src="controleurs/loginCtrl.js"></script>
+    <script src="controleurs/accueilCtrl.js"></script> 
+    <script src="controleurs/resetPasswordCtrl.js"></script>
+    <script src="controleurs/parametresCtrl.js"></script> 
+  </head>
+  <body ng-app="starter">
+   <!--  <div ng-controller="LoTest as user">
+      ééé
+    </div> -->
+<!-- Named -->
+    <div ui-view></div> 
+  </body>
+</html>

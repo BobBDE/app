@@ -1,0 +1,19 @@
+
+    <div class="choix-boissons">
+        <div class="liste-boissons">
+          <div class="item item-divider">
+            Choisissez une ou plusieures boissons:
+          </div>
+          <checkbox ng-model="boisson.isChecked" ng-checked="boisson.isChecked" ng-repeat="boisson in boisson.boissons" >
+            <div class="details-boissons">
+                {{boisson.name}}
+                <span class="item-note item-details-note" ng-if="boisson.prix!=0.5">
+                  {{boisson.prix}}€
+                </span>
+            </div>
+          </checkbox>
+        </div>
+        <button class="item button button-full button-balanced valide-boissons" ng-click="boisson.submit(boisson)">
+            Valider ! 
+        </button>
+    </div>
